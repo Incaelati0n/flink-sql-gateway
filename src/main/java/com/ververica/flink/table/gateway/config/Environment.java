@@ -18,6 +18,7 @@
 
 package com.ververica.flink.table.gateway.config;
 
+import com.ververica.flink.table.gateway.SqlGatewayException;
 import com.ververica.flink.table.gateway.config.entries.CatalogEntry;
 import com.ververica.flink.table.gateway.config.entries.ConfigurationEntry;
 import com.ververica.flink.table.gateway.config.entries.DeploymentEntry;
@@ -28,7 +29,6 @@ import com.ververica.flink.table.gateway.config.entries.ServerEntry;
 import com.ververica.flink.table.gateway.config.entries.SessionEntry;
 import com.ververica.flink.table.gateway.config.entries.TableEntry;
 import com.ververica.flink.table.gateway.config.entries.ViewEntry;
-import com.ververica.flink.table.gateway.utils.SqlGatewayException;
 
 import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.databind.JsonMappingException;
 

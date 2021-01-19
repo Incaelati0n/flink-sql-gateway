@@ -18,6 +18,7 @@
 
 package com.ververica.flink.table.gateway.utils;
 
+import com.ververica.flink.table.gateway.SqlGatewayException;
 import com.ververica.flink.table.gateway.config.Environment;
 
 import org.slf4j.Logger;

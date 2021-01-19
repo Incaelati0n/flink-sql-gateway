@@ -18,9 +18,9 @@
 
 package com.ververica.flink.table.gateway.operation;
 
+import com.ververica.flink.table.gateway.SqlCommandParser.SqlCommandCall;
+import com.ververica.flink.table.gateway.SqlGatewayException;
 import com.ververica.flink.table.gateway.context.SessionContext;
-import com.ververica.flink.table.gateway.operation.SqlCommandParser.SqlCommandCall;
-import com.ververica.flink.table.gateway.utils.SqlGatewayException;
 
 /**
  * The factory to create {@link Operation} based on {@link SqlCommandCall}.
@@ -71,31 +71,31 @@ public class OperationFactory {
 				break;
 			case INSERT_INTO:
 			case INSERT_OVERWRITE:
-				operation = new InsertOperation(context, call.operands[0], call.operands[1]);
+				operation = new InsertOperation(context, call.operands[0]);
 				break;
 			case SHOW_MODULES:
-				operation = new ShowModulesOperation(context);
+				operation = new ShowModuleOperation(context);
 				break;
 			case SHOW_CATALOGS:
-				operation = new ShowCatalogsOperation(context);
+				operation = new ShowCatalogOperation(context);
 				break;
 			case SHOW_CURRENT_CATALOG:
 				operation = new ShowCurrentCatalogOperation(context);
 				break;
 			case SHOW_DATABASES:
-				operation = new ShowDatabasesOperation(context);
+				operation = new ShowDatabaseOperation(context);
 				break;
 			case SHOW_CURRENT_DATABASE:
 				operation = new ShowCurrentDatabaseOperation(context);
 				break;
 			case SHOW_TABLES:
-				operation = new ShowTablesOperation(context);
+				operation = new ShowTableOperation(context);
 				break;
 			case SHOW_VIEWS:
-				operation = new ShowViewsOperation(context);
+				operation = new ShowViewOperation(context);
 				break;
 			case SHOW_FUNCTIONS:
-				operation = new ShowFunctionsOperation(context);
+				operation = new ShowFunctionOperation(context);
 				break;
 			case DESCRIBE_TABLE:
 				operation = new DescribeTableOperation(context, call.operands[0]);
